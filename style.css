@@ -1,0 +1,166 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Darker text for better readability */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Particle Animation Background */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, #f0f0f0 20%, #f0f0f0 80%, transparent 80%, transparent),
+              radial-gradient(circle, transparent 20%, #f0f0f0 20%, #f0f0f0 80%, transparent 80%, transparent) 50px 50px;
+  background-size: 100px 100px;
+  animation: moveParticles 4s linear infinite;
+}
+
+@keyframes moveParticles {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100px);
+  }
+}
+
+/* Form Container */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+  transition: box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  box-shadow: 0 0 20px rgba(106, 17, 203, 0.2), 0 0 40px rgba(106, 17, 203, 0.1); /* Subtle glowing effect */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #6a11cb; /* Purple heading */
+  text-shadow: 0 0 10px rgba(106, 17, 203, 0.2); /* Subtle text glow */
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555; /* Darker label text */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: #6a11cb; /* Purple border on focus */
+  outline: none;
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.2); /* Subtle glowing effect on focus */
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #ff4d4d; /* Red error text */
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #6a11cb; /* Purple button */
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background-color: #2575fc; /* Blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 0 15px rgba(106, 17, 203, 0.3); /* Subtle glowing effect on hover */
+}
+
+button[type="reset"] {
+  background-color: #ff4d4d; /* Red button */
+  color: #fff;
+}
+
+button[type="reset"]:hover {
+  background-color: #cc0000; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.3); /* Subtle glowing effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
